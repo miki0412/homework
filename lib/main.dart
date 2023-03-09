@@ -44,46 +44,44 @@ class FlutterTask1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(0.5),
-        actions: [
-          IconButton(onPressed: (){},
-            icon: const Icon(Icons.favorite_border_outlined),color: Colors.white,
-          ),
-        ],
       ),
 
         extendBodyBehindAppBar: true,
         body: Column(
           children: [
             Stack(
+              alignment: Alignment.bottomLeft,
               children: [
-                Container(
-                  height: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30.0), //角を丸める
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(0.0, 2.0), //位置
-                        blurRadius: 6.0,
-                      ),
-                    ]
-                  ),
-                  child: ClipRRect(
-                    borderRadius:  BorderRadius.circular(30.0),
-                    child:Stack(
-                      children:[
-                        Image.asset("assets/brazil.png"),
-                        fit: BoxFit.cover,
-      ],
-        ),
-    ),
-                ),
-    ],
-    ),
-    ],
-    ),
-    );
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30.0),
+                        child:
+                        Image.asset("assets/brazil.png",
+                          fit: BoxFit.cover,),),
+                       Container(
+                         padding: const EdgeInsets.only(left: 20, top: 10, bottom: 50,),
+                             child: Column(
+                               crossAxisAlignment: CrossAxisAlignment.start,
+                               children: const [
+                                 Text("Minas Gerais",
+                                   style: TextStyle(
+                                       fontSize: 24,
+                                       color: Colors.red,
+                                       fontWeight: FontWeight.w600),),
 
+                                 Icon(Icons.location_on_outlined, color: Colors.white,),
+                                 Text("Brazil",
+                                   style: TextStyle(
+                                       fontSize: 24,
+                                       color: Colors.red,
+                                       fontWeight: FontWeight.w600),),
+                               ],
+                             ),
+                       ),
+              ],
+            ),
+          ],
+        ),
+    );
   }
 }
 
